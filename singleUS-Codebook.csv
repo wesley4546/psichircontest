@@ -1,0 +1,41 @@
+Variable name,Question or description of variable ,Response options
+ID,Arbitrary ID numbers,
+age,What is your age?,18-100
+gender,What is your gender?,0 = Man; 1 = Woman; 2 = Transgender; 3 = Other
+edu,What is the highest level of education you have completed?,"0 = High school or less; 1 = Vocational, technical,  associates degree or some college; 2 =  Bachelor's degree; 3 = Graduate or professional degree"
+sexualorientation,Which sexual orientation do you most identify with?,0 = Straght / Heterosexual; 1 = Homosexual / Gay / Lesbian; 2 = Bisexual; 3 = Other
+judge_pic,Have you ever judged someone based on a photo?,0 = Unchecked; 1 = Checked
+judge_outfit,Have you ever judged someone based on their outfit?,0 = Unchecked; 1 = Checked
+judge_job,Have you ever judged someone based on their job title or occupation?,0 = Unchecked; 1 = Checked
+judge_born,Have you ever judged someone based on what city/state country they were born in?,0 = Unchecked; 1 = Checked
+judge_live,Have you ever judged someone based on the neighborhood they currently live in?,0 = Unchecked; 1 = Checked
+judge_car,Have you ever judged someone based on what car they drive?,0 = Unchecked; 1 = Checked
+judge_uni,Have you ever judged someone based on what college/university they went to?,0 = Unchecked; 1 = Checked
+judge_diet,Have you ever judged someone based on what they eat/their diet?,0 = Unchecked; 1 = Checked
+judge_drink,Have you ever judged someone based on what they drink?,0 = Unchecked; 1 = Checked
+judge_teeth,Have you ever judged someone based on their teeth/smile?,0 = Unchecked; 1 = Checked
+judge_posts,Have you ever judged someone based on their post(s) on social media?,0 = Unchecked; 1 = Checked
+judge_grammar,Have you ever judged someone based on their grammar or accent?,0 = Unchecked; 1 = Checked
+judge_sparetime,Have you ever judged someone based on what they do in their spare time?,0 = Unchecked; 1 = Checked
+judge_total,Total number of judgments reported,0-13
+onenight,Have you ever had any of the following? One night stand,yes; no
+friendwb,Have you ever had any of the following? A friends with benefits relationship,yes; no
+datingsites,How many dating sites/apps do you currently have a profile on?,0-4; 5+
+firstdates,How many first dates have you gone on so far in 2016?,0-19; 20+
+seconddates,"In the last year, how many second dates have you been on? ",0-19; 20+
+love,How many times have you been in love?,0-100
+age_virginity,"At what age did you lose your virginity (i.e., age at first sexual intercourse)? ",13 and under; 14-100; Still a virgin; Prefer not to answer
+sex_year,"In the past 12 months, how many times have you had sex? ",0-365; prefer not to answer
+sexparters_year,How many sexual partners have you had in the last 12 months?,0-1000
+sexparters_life,How may sexual partners have you had in your lifetime?,0-1000
+cheat,Have you ever had an affair or cheated on a significant other?,"Yes, I've committed sexual infidelity; Yes, I've committed emotional infidelity; Yes, I've committed both sexual and emotional infidelity; No"
+whitelie_age,Which of the following white lies would you tell on a first date? Your Age,Unchecked or Checked
+whitelie_divorce,Which of the following white lies would you tell on a first date? Being Divorced,Unchecked or Checked
+whitelie_kids,Which of the following white lies would you tell on a first date? Having Kids,Unchecked or Checked
+whitelie_live,Which of the following white lies would you tell on a first date? Where you currently live,Unchecked or Checked
+whitelie_job,Which of the following white lies would you tell on a first date? Your Job,Unchecked or Checked
+whitelie_finance,Which of the following white lies would you tell on a first date? Your finances,Unchecked or Checked
+whitelie_interest,Which of the following white lies would you tell on a first date? Your interests/hobbies,Unchecked or Checked
+whitelie_sexhistory,Which of the following white lies would you tell on a first date? Your sexual history,Unchecked or Checked
+whitelie_datehistory,Which of the following white lies would you tell on a first date? Your dating history,Unchecked or Checked
+whitelie_total,Total number of white lies reported,0 - 9

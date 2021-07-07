@@ -1,1 +1,2 @@
-# psichircontest
+# PsiChiR_contest
+ 

@@ -1,0 +1,54 @@
+---
+title: "PsiChiR contest"
+author: "Wesley Gardiner"
+date: "7/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(janitor)
+```
+
+
+Level 1: Create the total superficial judgment summary score (i.e., sum judge_pic, judge_outfit, judge_job, judge_born, judge_live, judge_car, judge_uni, judge_diet, judge_drink, judge_teeth, judge_posts, judge_grammar, judge_sparetime)
+```{r}
+singleUS <- read_csv("singleUS-singleUS.csv")
+
+summary_scores <- 
+  singleUS %>% 
+  rowwise() %>%
+  mutate(sfj_score = sum(c_across(judge_pic:judge_sparetime))) %>% 
+  ungroup()
+
+```
+Level 2: Examine the total superficial judgment summary score with a histogram.
+
+```{r}
+ggplot(summary_scores, aes(x = sfj_score)) +
+  geom_histogram(bins = 50)
+```
+Level 3: Compute mean/median/mode/standard deviation for the total superficial judgment summary score.
+
+```{r}
+summary_scores %>% 
+  summarize(mean = mean(sfj_score),
+            std_dev = sd(sfj_score),
+            med = median(sfj_score),
+            most = modeest::mfv(sfj_score)
+            )
+```
+
+
+Level 4:Compute means and standard deviation by group & do a t-test
+
+
+
+In order to complete each level, you need to complete all levels before (so in order to complete level 4, you also need to do 1, 2, and 3 correctly).
+
+
+
+
+
+
+
