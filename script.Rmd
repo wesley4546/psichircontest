@@ -1,7 +1,7 @@
 ---
 title: "PsiChiR contest"
 author: "Wesley Gardiner"
-date: "7/1/2021"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
@@ -11,44 +11,62 @@ library(janitor)
 ```
 
 
-Level 1: Create the total superficial judgment summary score (i.e., sum judge_pic, judge_outfit, judge_job, judge_born, judge_live, judge_car, judge_uni, judge_diet, judge_drink, judge_teeth, judge_posts, judge_grammar, judge_sparetime)
+## Level 1: 
+Create the total superficial judgment summary score (i.e., sum judge_pic, judge_outfit, judge_job, judge_born, judge_live, judge_car, judge_uni, judge_diet, judge_drink, judge_teeth, judge_posts, judge_grammar, judge_sparetime)
+
 ```{r}
 singleUS <- read_csv("singleUS-singleUS.csv")
 
-summary_scores <- 
-  singleUS %>% 
+summary_scores <-
+  singleUS %>%
   rowwise() %>%
-  mutate(sfj_score = sum(c_across(judge_pic:judge_sparetime))) %>% 
+  mutate(sfj_score = sum(c_across(judge_pic:judge_sparetime))) %>%
   ungroup()
-
 ```
-Level 2: Examine the total superficial judgment summary score with a histogram.
+
+## Level 2: 
+Examine the total superficial judgment summsary score with a histogram.
 
 ```{r}
 ggplot(summary_scores, aes(x = sfj_score)) +
-  geom_histogram(bins = 50)
+  geom_histogram()
 ```
-Level 3: Compute mean/median/mode/standard deviation for the total superficial judgment summary score.
+
+## Level 3: 
+Compute mean/median/mode/standard deviation for the total superficial judgment summary score.
 
 ```{r}
-summary_scores %>% 
-  summarize(mean = mean(sfj_score),
-            std_dev = sd(sfj_score),
-            med = median(sfj_score),
-            most = modeest::mfv(sfj_score)
-            )
+summary_scores %>%
+  summarize(
+    mean = mean(sfj_score),
+    std_dev = sd(sfj_score),
+    med = median(sfj_score),
+    most = modeest::mfv(sfj_score)
+  )
 ```
 
 
-Level 4:Compute means and standard deviation by group & do a t-test
+## Level 4:
+Compute means and standard deviation by group & do a t-test
 
+
+```{r}
+summary_scores %>%
+  group_by(onenight) %>%
+  summarize(
+    mean = mean(sfj_score),
+    std_dev = sd(sfj_score),
+    med = median(sfj_score),
+    most = modeest::mfv(sfj_score)
+  )
+
+t_test <- summary_scores %>%
+  group_by(onenight) %>%
+  select(ID, sfj_score, onenight) %>%
+  drop_na()
+
+t.test(t_test$sfj_score ~ t_test$onenight)
+```
 
 
 In order to complete each level, you need to complete all levels before (so in order to complete level 4, you also need to do 1, 2, and 3 correctly).
-
-
-
-
-
-
-
