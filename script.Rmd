@@ -6,8 +6,11 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-library(tidyverse)
-library(janitor)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(readr)
+library(modeest)
 ```
 
 
@@ -25,11 +28,21 @@ summary_scores <-
 ```
 
 ## Level 2: 
-Examine the total superficial judgment summsary score with a histogram.
+Examine the total superficial judgment summary score with a histogram.
 
 ```{r}
 ggplot(summary_scores, aes(x = sfj_score)) +
-  geom_histogram()
+  geom_histogram(bins = 30) +
+  labs(
+    title = "Histogram of Superficial Judgment Summary Scores (SFJ Score)",
+    subtitle = "Total yes/no judgment responses by each candidate",
+    x = "SFJ Score",
+    y = "Number of Responses",
+    caption = "Data: OSF PsyChiR Contest"
+  ) + 
+  scale_x_continuous(breaks=0:13)
+
+
 ```
 
 ## Level 3: 
